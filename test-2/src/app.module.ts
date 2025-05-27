@@ -9,6 +9,9 @@ import { User } from './users/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { GameLogicService } from './game/game.service';
+import { GameController } from './game/game.controller';
+import { GameModule } from './game/game.module';
 
 @Module({
   imports: [
@@ -22,8 +25,10 @@ import { join } from 'path';
       synchronize: true,
     }),
     UsersModule,
-    AuthModule],
-  controllers: [AppController, FibonacciController],
-  providers: [AppService, FibonacciService],
+    AuthModule,
+    GameModule
+  ],
+  controllers: [AppController, FibonacciController, GameController],
+  providers: [AppService, FibonacciService, GameLogicService],
 })
 export class AppModule {}

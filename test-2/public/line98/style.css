@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    border: 2px solid #333;
+    background-color: #eee;
+    gap: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+.cell.target-highlight {
+    background-color: lightblue;
+    border: 2px solid dodgerblue;
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.ball.selected {
+    width: 45px;
+    height: 45px;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-out;
+    border: 2px solid white;
+}
+
+.ball.red { background-color: #ff6347; }
+.ball.green { background-color: #3cb371; }
+.ball.blue { background-color: #1e90ff; }
+.ball.yellow { background-color: #ffd700; }
+.ball.orange { background-color: #ffa500; }
+.ball.purple { background-color: #8a2be2; }
+.ball.cyan { background-color: #00ced1; }
+
+.controls {
+    margin-top: 10px;
+}
+
+#help-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#help-button:hover {
+    background-color: #45a049;
+}
